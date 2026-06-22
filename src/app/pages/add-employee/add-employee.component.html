@@ -1,0 +1,38 @@
+
+<div class="flex">
+<!--sidebar-->
+    <div class="w-64 bg-gray-900 text-white p-5">
+        <h1 class="text-2xl font-bold mb-10">EMS</h1>
+        <ul class="space-y-4">
+            <li class="bg-blue-600 p-3 rounded-lg">
+                <a routerLink="/employees">Employees</a></li>
+            <li class="p-3 hover:bg-gray-700 rounded-lg cursor-poiter">
+                <a routerLink="/dashboard">Dashboard</a>
+            </li>
+            <li class="p-3 hover:bg-gray-700 rounded-lg cursor-poiter">
+               <a routerLink="/add-employee"> Add Employee</a>
+            </li>
+        </ul>
+    </div>
+ <div class="flex-1 p-10 bg-gray-100 min-h-screen">
+<div class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="bg-white p-8 rounded-2xl shadow-lg w-[500px]">
+        <h1 class="text-3xl font-bold mb-6 text-blue-600">
+            Add Employee
+        </h1>
+        <input type="text" placeholder="Employee Name" class="w-full border p-3 rounded-lg
+         mb-4" [(ngModel)]="employee.name"/>
+        <input type="text" placeholder="Department" class="w-full border p-3 rounded-lg 
+        mb-4" [(ngModel)]="employee.email"/>
+         <input type="text" placeholder="Department" class="w-full border p-3 rounded-lg 
+        mb-4" [(ngModel)]="employee.department"/>
+       
+        <button class="w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-gray-700"
+        (click)="saveEmployee()">
+            Save Employee
+        </button>
+    </div>
+</div>
+<div class="text-right"><button onclick="history.back()">Back</button></div>
+ </div>
+</div>

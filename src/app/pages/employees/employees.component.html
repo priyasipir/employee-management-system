@@ -1,0 +1,56 @@
+<div class="flex">
+    <!--sidebar-->
+    <div class="w-64 bg-gray-900 text-white p-5">
+        <h1 class="text-2xl font-bold mb-10">EMS</h1>
+        <ul class="space-y-4">
+            <li class="bg-blue-600 p-3 rounded-lg">
+                <a routerLink="/employees">Employees</a>
+            </li>
+            <li class="p-3 hover:bg-gray-700 rounded-lg cursor-poiter">
+                <a routerLink="/dashboard">Dashboard</a>
+            </li>
+            <li class="p-3 hover:bg-gray-700 rounded-lg cursor-poiter">
+                <a routerLink="/add-employee"> Add Employee</a>
+            </li>
+        </ul>
+    </div>
+
+    <!--Main Content-->
+    <div class="flex-1 p-10 bg-gray-100 min-h-screen">
+        <div class="flex justify-between mb-6">
+            <h1 class="text-3xl font-bold">Employees</h1>
+            <input type="text" placeholder="Search Employee" [(ngModel)]="searchText" class="border p-2 mb-3 rounded-lg" />
+        </div>
+        <div class="bg-white rounded-2xl shadow p-5">
+            <table class="w-full">
+                <thead>
+                    <tr class="border-b">
+                        <th class="text-left p-3">Name</th>
+                        <th class="text-left p-3">Email</th>
+                        <th class="text-left p-3">Department</th>
+                        <th class="text-left p-3">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b" *ngFor="let emp of filteredEmployees()">
+                        <td class="p-3">{{ emp.name }}</td>
+                        <td class="p-3">{{emp.email}}</td>
+                        <td class="p-3">{{ emp.department}}</td>
+                        <td class="p-3"><button (click)="deleteEmployee(emp._id)"
+                                class="bg-red-500 text-white px-3 py-1 rounded">Delete</button></td>
+<td class="p-3"><button (click)="editEmployee(emp)" class="bg-blue-500 text-white px-3 py-1 rounded ml-2">Edit</button></td>                                
+                    </tr>
+                </tbody>
+            </table>
+
+            <div *ngIf="selectedEmployee" class="bg-white p-4 rounded shadow mb-4">
+                <h2 class="text-xl font-bold mb-3">Edit Employee</h2>
+                <input [(ngModel)]="selectedEmployee.name" class="border p-2 mr-2" placeholder="Name">
+                <input [(ngModel)]="selectedEmployee.email" class="border p-2 mr-2" placeholder="email">
+                <input [(ngModel)]="selectedEmployee.department" class="border p-2 mr-2" placeholder="department">
+
+                <button (click)="updateEmployee()" class="bg-green-500 text-white px-4 py-2 rounded">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
