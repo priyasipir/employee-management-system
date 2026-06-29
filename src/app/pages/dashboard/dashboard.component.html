@@ -14,7 +14,7 @@
             </li>
         </ul>
     </div>
-    <div class="flex-1 p-10 bg-gray-100 min-h-screen">
+    <div class="flex-1 bg-gray-100 min-h-screen">
         <div class="bg-gray-100 min-h-screen p-10">
             <div class="w-full bg-gray-100 p-3 flex justify-between items-center mb-8">
                 <div class="text-4xl font-bold">
@@ -26,49 +26,52 @@
             </div>
             <!--banner section start-->
             <div class="relative mb-6">
-               <img src="assets/images/banner_1.jpg" class="w-full h-64 object-cover rounded-lg"/>
-               <div class="absolute top-10 left-10 text-white">
-                <h1 class="text-4xl font-bold">Employee Management System</h1>
-               </div>
-               <p class="bg-gray-700 p-5 font-bold text-white">Manage Employees Efficiently</p>
+                <div>
+                    <img src="assets/images/banner_1.jpg" class="w-full h-64 object-cover rounded-lg" />
+                </div>
+                <div class="absolute top-10 left-10 text-white">
+                    <h1 class="text-4xl font-bold">Employee Management System</h1>
+                </div>
+                <p class="bg-gray-700 p-5 font-bold text-white">Manage Employees Efficiently</p>
             </div><!--banner end-->
             <!--banner section end-->
 
-            <div class="grid grid-cols-3 gap-4 mb-6">
-                <div class="bg-blue-500 text-white p-5 rounded shadow">
+            <div class="grid sm:grid-cols-1 xl:grid-cols-3 gap-4 mb-6"><!--card start-->
+                <div class="bg-blue-500 text-white p-5 rounded shadow hover:shadow-lg transition">
                     <h3 class="text-gray-500 font-bold">Total Employees</h3>
                     <p class="text-3xl font-bold">{{totalEmployees}}</p>
                 </div>
-                <div class="bg-green-500 text-white p-5 rounded shadow">
+                <div class="bg-green-500 text-white p-5 rounded shadow hover:shadow-lg transition">
                     <h3 class="text-gray-500">Departments</h3>
                     <p class="text-3xl font-bold">{{departments}}</p>
                 </div>
-                <div class="bg-yellow-500 text-white p-5 rounded shadow">
+                <div class="bg-yellow-500 text-white p-5 rounded shadow hover:shadow-lg transition ">
                     <h3 class="text-gray-500 font-bold">Projects</h3>
                     <p class="text-3xl font-bold">{{projects}}</p>
                 </div>
-            </div>
-            <div class="bg-white p-5 rounded shadow">
+            </div><!--card end-->
+            <div class="bg-white p-5 rounded shadow"><!--table section start-->
                 <h2 class="text-2xl font-bold mb-4">Recent Employees</h2>
-                <table class="w-full">
-                    <thead>
-                        <tr class="border-b">
-                            <th class="text-left p-3">Name</th>
-                            <th class="text-left p-3">Role</th>
-                            <th class="text-left p-3">Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="border-b" *ngFor="let emp of recentEmployees">
-                            <td class="p-3">{{emp.name}}</td>
-                            <td class="p-3">{{emp.department}}</td>
-                            <td class="p-3">Active</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full">
+                        <thead>
+                            <tr class="border-b">
+                                <th class="text-left p-3">Name</th>
+                                <th class="text-left p-3">Role</th>
+                                <th class="text-left p-3">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b whitespace-nowrap" *ngFor="let emp of recentEmployees">
+                                <td class="p-3">{{emp.name}}</td>
+                                <td class="p-3">{{emp.department}}</td>
+                                <td class="p-3">Active</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div><!--table section end-->
         </div>
         <div class="text-right"><button onclick="history.back()">Back</button></div>
     </div>
-
 </div>
