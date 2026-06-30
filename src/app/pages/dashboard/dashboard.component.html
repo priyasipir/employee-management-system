@@ -1,21 +1,8 @@
-<div class="flex">
-    <!--sidebar-->
-    <div class="w-64 bg-gray-900 text-white p-5">
-        <h1 class="text-2xl font-bold mb-10">EMS</h1>
-        <ul class="space-y-4">
-            <li class="bg-blue-600 p-3 rounded-lg">
-                <a routerLink="/employees">Employees</a>
-            </li>
-            <li class="p-3 hover:bg-gray-700 rounded-lg cursor-poiter">
-                <a routerLink="/dashboard">Dashboard</a>
-            </li>
-            <li class="p-3 hover:bg-gray-700 rounded-lg cursor-poiter">
-                <a routerLink="/add-employee"> Add Employee</a>
-            </li>
-        </ul>
-    </div>
-    <div class="flex-1 bg-gray-100 min-h-screen">
-        <div class="bg-gray-100 min-h-screen p-10">
+<div class="flex min-h-screen">
+   <!--sidebar-->
+   <app-sidebar class="bg-gray-900"></app-sidebar>
+    <div class="flex-1 bg-gray-100 pt-10 md:pt-4">
+        <div class="bg-gray-100 p-10">
             <div class="w-full bg-gray-100 p-3 flex justify-between items-center mb-8">
                 <div class="text-4xl font-bold">
                     Dashboard
@@ -38,15 +25,15 @@
 
             <div class="grid sm:grid-cols-1 xl:grid-cols-3 gap-4 mb-6"><!--card start-->
                 <div class="bg-blue-500 text-white p-5 rounded shadow hover:shadow-lg transition">
-                    <h3 class="text-gray-500 font-bold">Total Employees</h3>
+                    <h3 class="text-gray-500 font-bold text-white">Total Employees</h3>
                     <p class="text-3xl font-bold">{{totalEmployees}}</p>
                 </div>
                 <div class="bg-green-500 text-white p-5 rounded shadow hover:shadow-lg transition">
-                    <h3 class="text-gray-500">Departments</h3>
+                    <h3 class="text-gray-500 text-white">Departments</h3>
                     <p class="text-3xl font-bold">{{departments}}</p>
                 </div>
                 <div class="bg-yellow-500 text-white p-5 rounded shadow hover:shadow-lg transition ">
-                    <h3 class="text-gray-500 font-bold">Projects</h3>
+                    <h3 class="text-gray-500 font-bold text-white">Projects</h3>
                     <p class="text-3xl font-bold">{{projects}}</p>
                 </div>
             </div><!--card end-->

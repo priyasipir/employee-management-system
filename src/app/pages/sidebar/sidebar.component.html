@@ -1,0 +1,29 @@
+<!--Mobile overlay-->
+<div *ngIf="isSidebarOpen" (click)="toggleSidebar()" class="fixed inset-0 bg-black/50 z-20 md:hidden">
+</div>
+
+<!--Toggle button for mobile-->
+
+<div class="md:hidden fixed top-0 left-0 right-0 z-40 bg-gray-900 text-white flex items-center justify-between p-4">
+    <button (click)="toggleSidebar()">
+        &#9776;
+    </button>
+    <h1 class="text-xl font-bold sm:mr-8">EMS</h1>
+</div>
+
+<!--sidebar-->
+<div class="fixed md:static min-h-screen inset-y-0 left-0 z-30 w-64 bg-gray-900 text-white p-5 pt-16 md:pt-5 transition-transform duration-300 md:translate-x-0"
+    [class.translate-x-0]="isSidebarOpen" [class.-translate-x-full]="!isSidebarOpen">
+    <h1 class="text-2xl font-bold mb-10">EMS</h1>
+    <ul class="space-y-4">
+        <li class="bg-blue-600 p-3 rounded-lg">
+            <a routerLink="/employees">Employees</a>
+        </li>
+        <li class="p-3 hover:bg-gray-700 rounded-lg cursor-poiter">
+            <a routerLink="/dashboard">Dashboard</a>
+        </li>
+        <li class="p-3 hover:bg-gray-700 rounded-lg cursor-poiter">
+            <a routerLink="/add-employee"> Add Employee</a>
+        </li>
+    </ul>
+</div>

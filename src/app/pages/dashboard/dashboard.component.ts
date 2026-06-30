@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterLink, Router} from '@angular/router';
+import { Router} from '@angular/router';
 import { EmployeeService } from '../../services/employee.service';
 import { CommonModule } from '@angular/common';
+import { SidebarComponent } from '../sidebar/sidebar.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [RouterLink,CommonModule],
+  imports: [CommonModule,SidebarComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
